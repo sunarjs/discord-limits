@@ -15,28 +15,35 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+            version: 9
+            run_install: false
+
       - name: Install Node.js v20
         uses: actions/setup-node@v4
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
+          cache: 'pnpm'
 
       - name: Install dependencies
-        run: npm install
+        run: pnpm install
 
       - name: Build dependencies
-        run: npm run build
+        run: pnpm run build
 
       - name: Publish package to NPM
-        run: npm publish
+        run: pnpm publish --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
           
       - name: Verify NPM publish
-        run: npm info discord-limits
+        run: pnpm info discord-limits
 
       - name: Publish package to JSR
-        run: npx jsr publish
+        run: pnpm dlx jsr publish
 
       - name: Verify JSR publish
-        run: npx jsr info discord-limits
+        run: pnpm dlx jsr info @sunar/discord-limits
