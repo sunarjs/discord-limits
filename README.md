@@ -9,7 +9,7 @@ A robust library of constants defining Discord's limits, aimed at streamlining b
 
 ## Constants
 
-For a full list of constants, please refer to the [source code](https://github.com/sunarjs/discord-limits).
+For a full list of constants, please refer to the **[JSR documentation](https://jsr.io/@sunar/discord-limits/doc)**.
 
 - [Application Limits](https://github.com/sunarjs/discord-limits/blob/main/src/application.ts)
 - [Autocomplete Limits](https://github.com/sunarjs/discord-limits/blob/main/src/autocomplete.ts)
@@ -28,6 +28,12 @@ For a full list of constants, please refer to the [source code](https://github.c
 - [Text Input Limits](https://github.com/sunarjs/discord-limits/blob/main/src/textInput.ts)
 - [User Limits](https://github.com/sunarjs/discord-limits/blob/main/src/user.ts)
 
+## Usage
+
+```js
+import { ApplicationCommandNameLimit } from 'discord-limits';
+console.log('The limit of the application command name is:', ApplicationCommandNameLimit)
+```
 
 ## Contributing
 
@@ -39,4 +45,4 @@ This library was heavily inspired by the [SapphireJS utilities library](https://
 
 ## License
 
-Completely free and licensed under the [MIT license](https://github.com/sunarjs/sunar/blob/main/README.md). But if you want, you can give me a star on [GitHub](https://github.com/sunarjs/discord-limits).
+Completely free and licensed under the [MIT license](https://github.com/sunarjs/discord-limits/blob/main/README.md). But if you want, you can give me a star on [GitHub](https://github.com/sunarjs/discord-limits).
