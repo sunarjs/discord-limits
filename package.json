@@ -29,7 +29,7 @@
 	"homepage": "https://github.com/sunarjs/discord-limits#readme",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/sunarjs/discord-limits"
+		"url": "git+https://github.com/sunarjs/discord-limits.git"
 	},
 	"publishConfig": {
 		"access": "public"
