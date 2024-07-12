@@ -1,0 +1,56 @@
+{
+	"name": "discord-limits",
+	"version": "0.1.0",
+	"description": "A robust library of constants defining Discord's limits.",
+	"author": "tai (https://github.com/taii03)",
+	"license": "MIT",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"type": "module",
+	"exports": {
+		".": {
+			"import": {
+				"types": "./dist/index.d.ts",
+				"default": "./dist/index.js"
+			},
+			"require": {
+				"types": "./dist/index.d.cts",
+				"default": "./dist/index.cjs"
+			}
+		}
+	},
+	"files": ["dist"],
+	"sideEffects": false,
+	"scripts": {
+		"build": "tsup",
+		"lint": "biome lint ./src",
+		"format": "biome format --write ."
+	},
+	"homepage": "https://github.com/sunarjs/discord-limits#readme",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/sunarjs/discord-limits"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"keywords": [
+		"discord-limits",
+		"discord",
+		"limits",
+		"constants",
+		"api",
+		"bot",
+		"client",
+		"node",
+		"discord.js",
+		"typescript"
+	],
+	"devDependencies": {
+		"@biomejs/biome": "1.8.3",
+		"tsup": "^8.1.0"
+	},
+	"peerDependencies": {
+		"typescript": "^5.5.3"
+	}
+}

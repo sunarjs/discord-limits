@@ -1,0 +1,42 @@
+name: Publish Release
+
+on:
+  release:
+    types: [released]
+
+jobs:
+  npm-publish:
+    name: npm publish
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Node.js v20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install dependencies
+        uses: npm install
+
+      - name: Build dependencies
+        run: npm run build
+
+      - name: Publish package to NPM
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+          
+      - name: Verify NPM publish
+        run: npm info discord-limits
+
+      - name: Publish package to JSR
+        run: npx jsr publish
+
+      - name: Verify JSR publish
+        run: npx jsr info discord-limits
