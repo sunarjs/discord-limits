@@ -26,7 +26,7 @@
 		"lint": "biome lint ./src",
 		"format": "biome format --write ."
 	},
-	"homepage": "https://github.com/sunarjs/discord-limits#readme",
+	"homepage": "https://jsr.io/@sunar/discord-limits/doc",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/sunarjs/discord-limits.git"
